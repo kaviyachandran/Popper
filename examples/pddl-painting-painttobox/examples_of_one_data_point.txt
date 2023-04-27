@@ -1,3 +1,7 @@
+Rule out :  painttobox(A,B,C,D):- goal_inbox(E,B,D),negated_isboxcolor(E,B,D),holding(A,D),isdry(A,D),negated_gripperopen(C,D),isclean(A,D).
+e.g
+painttobox(obj3,receptacle_box,robby,2):- goal_inbox(obj3, receptacle_box,2), negated_isboxcolor(obj3, receptacle_box,2), holding(obj3,2), isdry(obj3,2), negated_gripperopen(robby,2),isclean(obj3,2).
+
 pos(painttobox(obj3,receptacle_box,robby,2)).
 
 goal_inbox(obj3,receptacle_box,2).
@@ -8,6 +12,7 @@ goal_isboxcolor(obj3,receptacle_box,2).
 goal_isshelfcolor(obj0,receptacle_shelf,2).
 goal_isshelfcolor(obj1,receptacle_shelf,2).
 goal_isshelfcolor(obj2,receptacle_shelf,2).
+
 holding(obj3,2).
 holdingtop(obj3,2).
 isclean(obj1,2).
@@ -18,6 +23,11 @@ isdry(obj0,2).
 isdry(obj3,2).
 iswet(obj1,2).
 iswet(obj2,2).
+ontable(obj0,2).
+ontable(obj1,2).
+ontable(obj2,2).
+ontable(obj3,2).
+
 negated_gripperopen(robby,2).
 negated_holding(obj0,2).
 negated_holding(obj1,2).
@@ -57,7 +67,18 @@ negated_notontable(obj0,2).
 negated_notontable(obj1,2).
 negated_notontable(obj2,2).
 negated_notontable(obj3,2).
-ontable(obj0,2).
-ontable(obj1,2).
-ontable(obj2,2).
-ontable(obj3,2).
+
+
+predicates list - it is okay to leave out some predicates for some examples
+normal             negated
+holding            negated_holding
+ontable            negated_ontable
+notontable         negated_notontable
+iswet              negated_iswet
+isdry              negated_isdry
+goal_inbox         negated_inbox
+goal_inshelf       negated_inshelf
+goal_isshelfcolor  negated_isshelfcolor
+holdingtop         negated_holdingtop
+holdingside 	   negated_holdingside
+				   negated_gripperopen
