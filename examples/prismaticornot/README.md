@@ -21,3 +21,6 @@ pushstraightleft, pushstraightright
 moved(c)
 ### Inferred 
 prismaticleft / prismaticright
+
+hasDisp(Object, Graspable)
+moved(Object, Direction):-  negated_free(gripper), contact(gripper,Object), pullstraight(Object, Direction) 
